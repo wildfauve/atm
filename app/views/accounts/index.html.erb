@@ -1,0 +1,21 @@
+<div class="row">
+   <div class="small-2 columns">
+
+         <div class="icon-bar large-vertical three-up">
+            <% @accounts.each  do |acct|%>
+               <%= link_to(options_accounts_path(deposit: acct.link_for(rel: "transaction_deposit"),
+                                                withdraw: acct.link_for(rel: "transaction_withdraw")), 
+                                                class: "item", remote: true) do %>
+                   <i class="fi-dollar"></i>
+                   <label><%= acct.account_msg["type"]%></label>
+                <% end %>
+         <% end %>
+      </div>
+   </div>
+   <div class="small-10 columns">
+      <div id="account"></div>
+   </div>
+</div>
+<div class="row">
+   <div id="amount_form"></div>
+</div>

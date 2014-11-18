@@ -1,0 +1,12 @@
+<div class="row">
+   <div class="icon-bar large-vertical three-up">
+      <%= link_to(deposit_accounts_path(link: @deposit,class: "item"), class: "item", remote: true) do %>
+          <i class="fi-plus"></i>
+          <label>Deposit</label>
+      <% end %>
+      <%= link_to(withdraw_accounts_path(link: @withdraw,class: "item"), class: "item", remote: true) do %>
+          <i class="fi-minus"></i>
+          <label>Withdraw</label>
+      <% end %>   
+   </div>
+</div>

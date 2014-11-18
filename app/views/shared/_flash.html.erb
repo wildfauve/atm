@@ -1,0 +1,8 @@
+<%if flashs %>
+		<% flashs.each do |key, msg| %>
+         <div data-alert class="alert-box success radius">
+            <%= "#{key}: #{msg}"%>
+           <a href="#" class="close">&times;</a>
+         </div>
+		<% end %>
+<% end %>

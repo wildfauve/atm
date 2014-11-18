@@ -1,0 +1,12 @@
+oauth:
+  client_id: "atm"
+  client_secret: "FFyEIFiQRhVw5ZU-Ku8x8Q"
+  id_token_secret: "id_token_secret"
+  id_service_url: "http://localhost:3013/authorise"
+  id_token_service_url: "http://localhost:3013/token"
+  id_logout_service_url: "http://localhost:3013/logout"  
+  id_userinfo_service_url: "http://localhost:3013/userinfo"  
+  require_additional_identity: false
+services:
+  accounts:
+    index: "http://localhost:3023/api/v1/accounts"
