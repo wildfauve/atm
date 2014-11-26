@@ -2,7 +2,7 @@ class AccountsManager
   
   include Wisper::Publisher
   
-  attr_accessor :account_msg
+  attr_accessor :account_msg, :account
   
   def self.all(user_proxy: nil)
     @accounts = []
@@ -10,7 +10,7 @@ class AccountsManager
     accounts["accounts"].each do |acct|
       @accounts << self.new(account: acct)
     end
-    @accounts 
+    @accounts
   end
   
   def self.accounts
@@ -23,6 +23,11 @@ class AccountsManager
   
   def link_for(rel: nil)
     @account_msg["_links"][rel.to_s]["href"]
+  end
+  
+  def get_account(user_proxy: nil, link: nil)
+    @account = AccountsPort.new.get_account(link: link, options: {id_token: user_proxy.access_token[:id_token]})
+    self
   end
   
   def process_account_transaction(link: nil, amount: nil, user_proxy: nil)

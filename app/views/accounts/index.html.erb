@@ -4,7 +4,9 @@
          <div class="icon-bar large-vertical three-up">
             <% @accounts.each  do |acct|%>
                <%= link_to(options_accounts_path(deposit: acct.link_for(rel: "transaction_deposit"),
-                                                withdraw: acct.link_for(rel: "transaction_withdraw")), 
+                                                withdraw: acct.link_for(rel: "transaction_withdraw"),
+                                                self: acct.link_for(rel: "self"),
+                                                type: acct.account_msg["type"]), 
                                                 class: "item", remote: true) do %>
                    <i class="fi-dollar"></i>
                    <label><%= acct.account_msg["type"]%></label>
@@ -12,10 +14,15 @@
          <% end %>
       </div>
    </div>
-   <div class="small-10 columns">
+   <div class="small-2 columns">
       <div id="account"></div>
+   </div>
+   <div class="small-8 columns">
+      <div id="account_content"></div>
    </div>
 </div>
 <div class="row">
-   <div id="amount_form"></div>
+   <div class="small-3 small-centered columns">
+      <%= link_to 'Remove Card', remove_cards_path, method: :put, class: "button"%>
+   </div>
 </div>

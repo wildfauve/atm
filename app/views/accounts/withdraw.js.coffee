@@ -1,2 +1,2 @@
-content = "<%= escape_javascript(render(:partial => 'amount_form')) %>"
-$('#amount_form').html(content)
+content = "<%= escape_javascript(render(:partial => 'amount_form', locals: {action: "withdraw"})) %>"
+$('#account_content').html(content)

@@ -2,11 +2,15 @@
    <div class="icon-bar large-vertical three-up">
       <%= link_to(deposit_accounts_path(link: @deposit,class: "item"), class: "item", remote: true) do %>
           <i class="fi-plus"></i>
-          <label>Deposit</label>
+          <label><%= @type %> Deposit</label>
       <% end %>
       <%= link_to(withdraw_accounts_path(link: @withdraw,class: "item"), class: "item", remote: true) do %>
           <i class="fi-minus"></i>
-          <label>Withdraw</label>
+          <label><%= @type %> Withdraw</label>
       <% end %>   
+      <%= link_to(account_accounts_path(link: @self, class: "item"), class: "item", remote: true) do %>
+          <i class="fi-dollar"></i>
+          <label><%= @type %> Balance</label>
+      <% end %>         
    </div>
 </div>

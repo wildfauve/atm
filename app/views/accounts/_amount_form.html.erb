@@ -1,9 +1,9 @@
 <%= form_tag(transaction_accounts_path(link: @link), html: { class: "custom"}) do %>
    <div class="row">
-     <div class="small-4 columns">
-       <%= label_tag :amount, nil, class: "right inline" %>
+     <div class="small-2 columns">
+       <%= label_tag "#{action} amount", nil, class: "right inline" %>
      </div>
-     <div class="small-2 columns end">
+     <div class="small-6 columns end">
        <%= number_field_tag :amount %>
      </div> 
    </div>
